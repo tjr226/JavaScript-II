@@ -120,10 +120,9 @@ runners.forEach(function(entry){
     donation_list.push(entry.donation);
 });
 
-var new_donation_list = donation_list.slice()
-new_donation_list = new_donation_list.map(x => x * 2);
+donation_list = donation_list.map(x => x * 2);
 
-console.log(new_donation_list);
+console.log(donation_list);
 
 // Problem 3
 // get emails of all donors over $100
@@ -135,7 +134,6 @@ function checkDonationSize(entry) {
 }
 
 largeDonors = runners.filter(checkDonationSize);
-// console.log(largeDonors);
 
 let largeDonorEmails = [];
 largeDonors.forEach(function(entry) {

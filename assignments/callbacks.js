@@ -26,25 +26,56 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 
 function getLength(arr, cb) {
+  cb(arr.length);
   // getLength passes the length of the array into the callback.
 }
 
+getLength(items, function(length) {
+  console.log(length)
+});
+
 function last(arr, cb) {
+  cb(arr[arr.length - 1]);
   // last passes the last item of the array into the callback.
 }
 
+last(items, function(showLast) {
+  console.log(showLast);
+})
+
+
 function sumNums(x, y, cb) {
+  cb(x + y);
   // sumNums adds two numbers (x, y) and passes the result to the callback.
 }
 
+sumNums(1, 2, function(add) {
+  console.log(add);
+})
+
 function multiplyNums(x, y, cb) {
+  cb(x * y);
   // multiplyNums multiplies two numbers and passes the result to the callback.
 }
+
+multiplyNums(2, 3, function(multiplication) {
+  console.log(multiplication);
+})
+
 
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
+  cb(list.includes(item));
 }
+
+contains('Gum', items, function(checkIfIn) {
+  console.log(checkIfIn);
+})
+
+contains('Candy', items, function(checkIfIn) {
+  console.log(checkIfIn);
+})
 
 /* STRETCH PROBLEM */
 
